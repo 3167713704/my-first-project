@@ -1,0 +1,16 @@
+# 智能旅游 Agent 配置文件
+
+# YOLO 检测参数
+detection:
+  conf_threshold: 0.5        # 置信度阈值，低于此值丢弃
+  min_area_ratio: 0.005      # 最小面积占比，低于此值算小目标，丢弃
+  max_area_ratio: 0.8        # 最大面积占比，高于此值算大目标，丢弃
+  max_aspect_ratio: 5        # 最大长宽比，高于此值丢弃
+  min_pixel_size: 30         # 最小像素尺寸，宽或高小于此值丢弃
+  imgsz: 640                 # 新增：输入尺寸（越大越准，越慢）
+  device: 0              # 新增：cpu 或 0（GPU）  
+# 难例收集参数
+hard_case:
+  min_conf: 0.3              # 难例置信度下限
+  max_conf: 0.65             # 难例置信度上限
+  output_dir: "hard_cases"   # 难例保存目录
